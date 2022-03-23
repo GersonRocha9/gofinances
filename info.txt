@@ -1,0 +1,7 @@
+Styled Components
+Typescript
+React Native
+
+React Native Responsive Font-Size: https://www.npmjs.com/package/react-native-responsive-fontsize
+
+Google Fonts
