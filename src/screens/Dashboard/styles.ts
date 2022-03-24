@@ -2,6 +2,8 @@ import styled from "styled-components/native";
 
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.COLORS.background};
@@ -58,9 +60,8 @@ export const UserName = styled.Text`
   margin-left: 10px;
 `;
 
-export const Logout = styled.TouchableOpacity`
-  width: ${RFValue(48)}px;
-  height: ${RFValue(48)}px;
-  background-color: ${({ theme }) => theme.COLORS.shape};
-  border-radius: ${RFValue(25)}px;
+// Criando um componente com styled-components para o botão de logout
+export const Icon = styled(MaterialCommunityIcons)`
+  font-size: ${RFValue(28)}px;
+  color: ${({ theme }) => theme.COLORS.secondary};
 `;
