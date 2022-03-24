@@ -12,29 +12,22 @@ Application for personal financial management development in React Native.
 ### Clone Repo
 
 ```bash
-# Clone este repositório
 $ git clone https://github.com/GersonRocha9/gofinances.git
 
-# Acesse a pasta do projeto no terminal/cmd
 $ cd Ignite_GoFinances
 ```
 
 ### Run
 
 ```bash
-# Instale as dependências
 $ yarn install ou npm install
 
-# Execute a Aplicação em Desenvolvimento
 $ expo start
-
-# O servidor inciará na porta:19002 - acesse http://localhost:19002
 ```
 
 ### .ENV Config
 
 ```bash
-#adicionado .env.example no projeto, lembrar de adicionar as variáveis de ambiente conforme o exemplo
 
 # Google Credentials
 CLIENT_ID=

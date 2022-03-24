@@ -10,6 +10,7 @@ const Dashboard = () => {
       <Header>
         <UserWrapper>
           <UserInfo>
+            {/* Usando o avatar do GitHub */}
             <Photo source={{ uri: "https://avatars.githubusercontent.com/u/38770302?v=4" }} />
 
             <User>
