@@ -1,10 +1,9 @@
 import styled from "styled-components/native";
-
+import { FlatList } from "react-native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
-
+import { getBottomSpace, getStatusBarHeight } from "react-native-iphone-x-helper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { DataListProps } from ".";
 
 export const Container = styled.View`
   flex: 1;
@@ -69,7 +68,7 @@ export const Icon = styled(MaterialCommunityIcons)`
   color: ${({ theme }) => theme.COLORS.secondary};
 `;
 
-// ScrollView serve para rolar para o lado
+// ScrollView serve para rolar para o lado ou pra baixo
 export const HighlightCards = styled.ScrollView.attrs({
   // horizontal => um ao lado do outro
   // showsHorizontalScrollIndicator={false} => tirar a barra de rolagem
@@ -83,4 +82,26 @@ export const HighlightCards = styled.ScrollView.attrs({
   width: 100%;
   position: absolute;
   margin-top: ${RFPercentage(20)}px;
+  z-index: 2;
 `;
+
+export const Transactions = styled.View`
+  flex: 1%;
+  background-color: ${({ theme }) => theme.COLORS.background};
+  padding: 0 24px;
+  margin-top: ${RFPercentage(10)}px;
+`;
+
+export const Title = styled.Text`
+  font-size: ${RFValue(18)}px;
+  color: ${({ theme }) => theme.COLORS.title};
+  font-family: ${({ theme }) => theme.FONTS.regular};
+  margin-bottom: ${RFValue(16)}px;
+`;
+
+export const TransactionsList = styled(FlatList as new () => FlatList<DataListProps>).attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingBottom: getBottomSpace(),
+  },
+})``;
