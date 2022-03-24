@@ -2,6 +2,8 @@ import styled from "styled-components/native";
 
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
+
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export const Container = styled.View`
@@ -22,7 +24,8 @@ export const Header = styled.View`
 export const UserWrapper = styled.View`
   width: 100%;
   padding: 0 24px;
-  margin-top: ${RFValue(50)};
+  /* Funçao getStatusBarHeight() ajuda para casos de iPhone*/
+  margin-top: ${getStatusBarHeight() + 28}px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -64,4 +67,20 @@ export const UserName = styled.Text`
 export const Icon = styled(MaterialCommunityIcons)`
   font-size: ${RFValue(28)}px;
   color: ${({ theme }) => theme.COLORS.secondary};
+`;
+
+// ScrollView serve para rolar para o lado
+export const HighlightCards = styled.ScrollView.attrs({
+  // horizontal => um ao lado do outro
+  // showsHorizontalScrollIndicator={false} => tirar a barra de rolagem
+  // contentContainerStyle => espaçamento
+  horizontal: true,
+  showsHorizontalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingHorizontal: 24,
+  },
+})`
+  width: 100%;
+  position: absolute;
+  margin-top: ${RFPercentage(20)}px;
 `;
