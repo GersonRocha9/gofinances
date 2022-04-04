@@ -10,6 +10,7 @@ import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold } from
 import theme from "./src/global/styles/theme";
 import Dashboard from "./src/screens/Dashboard";
 import Home from "./src/screens/Home";
+import Register from "./src/screens/Register";
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -27,7 +28,7 @@ const App = () => {
     // ThemeProvider serve para passar qual o tema do app será utilizado
 
     <ThemeProvider theme={theme}>
-      <Dashboard />
+      <Register />
     </ThemeProvider>
   );
 };
