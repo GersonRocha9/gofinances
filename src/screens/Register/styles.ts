@@ -35,4 +35,5 @@ export const TransactionsTypes = styled.View`
   justify-content: space-between;
   align-items: center;
   margin-top: ${RFValue(8)}px;
+  margin-bottom: ${RFValue(8)}px;
 `;

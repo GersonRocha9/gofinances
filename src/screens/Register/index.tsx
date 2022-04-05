@@ -1,18 +1,32 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
+import { Modal } from "react-native";
 
 import Button from "../../components/Form/Button";
+import CategorySelectButton from "../../components/Form/CategorySelectButton";
 import Input from "../../components/Form/Input";
 import TransactionTypeButton from "../../components/Form/TransactionTypeButton";
-
-import { Container, Header, Title, Form, Fields, TransactionsTypes } from "./styles";
+import CategorySelect from "../CategorySelect";
+import { Container, Fields, Form, Header, Title, TransactionsTypes } from "./styles";
 
 const Register = () => {
-  // useState para verificar qual botao esta selecionado
   const [transactionType, setTransactionType] = useState("up");
+  const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+  const [category, setCategory] = useState({
+    key: "category",
+    name: "Categoria",
+  });
 
   const handleTransactionsTypeSelect = (type: "up" | "down") => {
     setTransactionType(type);
+  };
+
+  const handleOpenModalCategory = () => {
+    setCategoryModalOpen(true);
+  };
+
+  const handleCloseModalCategory = () => {
+    setCategoryModalOpen(false);
   };
 
   return (
@@ -42,10 +56,19 @@ const Register = () => {
               isActive={transactionType === "down"}
             />
           </TransactionsTypes>
+
+          <CategorySelectButton
+            title={category.name === "Categoria" ? "Selecionar" : category.name}
+            onPress={handleOpenModalCategory}
+          />
         </Fields>
 
         <Button title="Enviar" />
       </Form>
+
+      <Modal visible={categoryModalOpen}>
+        <CategorySelect category={category} setCategory={setCategory} closeSelectCategory={handleCloseModalCategory} />
+      </Modal>
     </Container>
   );
 };

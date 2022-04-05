@@ -1,8 +1,7 @@
-import styled, { css } from "styled-components/native";
-
-import { TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
+import styled, { css } from "styled-components/native";
 
 interface IconProps {
   type: "up" | "down";
@@ -49,4 +48,5 @@ export const Icon = styled(MaterialCommunityIcons)<IconProps>`
 export const Title = styled.Text`
   font-size: ${RFValue(14)}px;
   font-family: ${({ theme }) => theme.FONTS.regular};
+  color: ${({ theme }) => theme.COLORS.text};
 `;

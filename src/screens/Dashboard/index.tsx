@@ -1,24 +1,23 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 
-import {
-  Header,
-  UserWrapper,
-  HighlightCards,
-  Container,
-  UserInfo,
-  Photo,
-  User,
-  UserGreeting,
-  UserName,
-  Icon,
-  Transactions,
-  Title,
-  TransactionsList,
-} from "./styles";
-
 import HighlightCard from "../../components/HighlightCard";
 import TransactionCard, { TransactionCardProps } from "../../components/TransactionCard";
+import {
+  Container,
+  Header,
+  HighlightCards,
+  Icon,
+  Photo,
+  Title,
+  Transactions,
+  TransactionsList,
+  User,
+  UserGreeting,
+  UserInfo,
+  UserName,
+  UserWrapper,
+} from "./styles";
 
 export interface DataListProps extends TransactionCardProps {
   id: string;
@@ -106,7 +105,7 @@ const Dashboard = () => {
       </HighlightCards>
 
       <Transactions>
-        <Title>Listagem</Title>
+        <Title>Histórico de Transações</Title>
         <TransactionsList
           data={data}
           keyExtractor={(item) => item.id}

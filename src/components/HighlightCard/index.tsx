@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Header, Title, Icon, Footer, Amount, LastTransaction } from "./styles";
+import { Amount, Container, Footer, Header, Icon, LastTransaction, Title } from "./styles";
 
 interface Props {
   title: string;

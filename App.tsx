@@ -1,16 +1,10 @@
+import { Poppins_400Regular, Poppins_500Medium, Poppins_700Bold, useFonts } from "@expo-google-fonts/poppins";
+import AppLoading from "expo-app-loading";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-import AppLoading from "expo-app-loading";
-
-// importando as fontes que serão utilizadas no app
-// useFonts é um hook que retorna uma funçao para retornar as fontes
-import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold } from "@expo-google-fonts/poppins";
-
 import theme from "./src/global/styles/theme";
 import Dashboard from "./src/screens/Dashboard";
-import Home from "./src/screens/Home";
-import Register from "./src/screens/Register";
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -19,16 +13,13 @@ const App = () => {
     Poppins_700Bold,
   });
 
-  // Se a fonte não estiver carregada, exibe o AppLoading
   if (!fontsLoaded) {
     return <AppLoading />;
   }
 
   return (
-    // ThemeProvider serve para passar qual o tema do app será utilizado
-
     <ThemeProvider theme={theme}>
-      <Register />
+      <Dashboard />
     </ThemeProvider>
   );
 };
